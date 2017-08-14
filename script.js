@@ -65,8 +65,9 @@ function allLetter(){
 }
 
 
-//convert string to array and loop through array
-//instead of regular expression trying
+//one way:convert string to array and loop through array
+//second way: reg ex
+//another way which done below string manipulation instead of regular expression
 function ValidateEmail(){
   var myForm = document.forms["registration"];
   var email = myForm.elements["email"];
@@ -74,13 +75,12 @@ function ValidateEmail(){
   var email_len = email.value.length;
 
 
-//compare Indexof with lastIndex so there is only one @  and .com for email)
+//compare Indexof with lastIndex so there is only one @)
   var startAtIndex = email_str.indexOf('@'); //returns the index of the first occurence of @
   var lastAtIndex = email_str.lastIndexOf('@'); //returns the index of the last occurence of @
-  var comEnding = email_str.indexOf('.com');
-  var lastComEnding = email_str.indexOf('.com');
 
-  if(email_len===0 || startAtIndex < 0 || startAtIndex !== lastAtIndex || comEnding < 0 || comEnding !== lastComEnding ){
+//joe@
+  if(email_len===0 || startAtIndex > 2 || startAtIndex !== lastAtIndex || lastAtIndex > 2 ){
     console.log('You have entered an invalid email format!')
   }
 }

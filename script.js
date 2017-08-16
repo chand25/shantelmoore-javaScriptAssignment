@@ -80,7 +80,7 @@ function ValidateEmail(){
   var lastAtIndex = email_str.lastIndexOf('@'); //returns the index of the last occurence of @
 
 //joe@
-  if(email_len===0 || startAtIndex > 2 || startAtIndex !== lastAtIndex || lastAtIndex > 2 ){
+  if(email_len===0 || startAtIndex <= 1  || startAtIndex !== lastAtIndex){
     console.log('You have entered an invalid email format!')
   }
 }
